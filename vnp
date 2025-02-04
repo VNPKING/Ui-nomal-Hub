@@ -1,0 +1,358 @@
+-- Set global color and logo
+_G.Color = Color3.fromRGB(181, 100, 50)
+_G.Logo = 8964489645
+
+-- Load external script
+local normal = loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucifer4381/ui-normal-hub/main/scr"))()
+
+-- Create UI
+local Win = library:Evil("SuKuNa", "BANKAI", _G.Logo)
+
+-- Tạo tab "Fast Attack"
+local Tab = Win:CraftTab("Fast Attack")
+local Page = Tab:CraftPage("Fast Attack", 1)
+
+-- Nút tấn công nhanh cho Real Tripple Katana
+Page:Button("Fast attack Real Tripple Katana", function()
+    while wait() do
+        local args = {8, 3}
+        game:GetService("Players").LocalPlayer.PlayerGui.RealTrippleKatana.Skill1b.Z.TextButtonm1.Hitbox:FireServer(unpack(args))
+    end
+end)
+
+-- Nút tấn công nhanh cho Guts
+Page:Button("Guts", function()
+    while wait() do
+        local args = {8, 3}
+        game:GetService("Players").LocalPlayer.PlayerGui.Zabuza.Skill1b.Z.TextButtonm1.Hitbox:FireServer(unpack(args))
+    end
+end)
+
+-- Nút tấn công nhanh cho Geto
+Page:Button("Geto", function()
+    while wait() do
+        local args = {8, 3}
+        game:GetService("Players").LocalPlayer.PlayerGui.Tengen.Skill1b.Z.TextButtonm1.Hitbox:FireServer(unpack(args))
+    end
+end)
+
+-- Nút tấn công nhanh cho Yoru v2
+Page:Button("Yoru v2", function()
+    while wait() do
+        local args = {8, 3}
+        game:GetService("Players").LocalPlayer.PlayerGui.YoruV2.Skill1b.Z.TextButtonm1.Hitbox:FireServer(unpack(args))
+    end
+end)
+
+-- Nút tấn công nhanh cho Yoru v3
+Page:Button("Yoru v3", function()
+    while wait() do
+        local args = {8, 3}
+        game:GetService("Players").LocalPlayer.PlayerGui.YoruV3.Skill1b.Z.TextButtonm1.Hitbox:FireServer(unpack(args))
+    end
+end)
+
+-- Nút tấn công nhanh cho Ultimate Sword
+Page:Button("Ultimate Sword", function()
+    while wait() do
+        local args = {8, 3}
+        game:GetService("Players").LocalPlayer.PlayerGui.UltimateSword.Skill1b.Z.TextButtonm1.Hitbox:FireServer(unpack(args))
+    end
+end)
+
+-- Auto Quest Tab
+local Tab = Win:CraftTab("Auto Quest")
+local Page = Tab:CraftPage("Quest", 1)
+local Page = Tab:CraftPage("Auto Farm", 1)
+
+Page:Button("Quest 1", function()
+    while wait() do
+        game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept1.RemoteEvent:FireServer()
+    end
+end)
+
+Page:Button("Quest 2", function()
+    while wait() do
+        game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept2.RemoteEvent:FireServer()
+    end
+end)
+
+Page:Button("Quest 3", function()
+    while wait() do
+        game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept3.RemoteEvent:FireServer()
+    end
+end)
+
+Page:Button("Nhấn vào NPC nhiệm vụ trước rồi bật", function() end)
+Page:Button("Nếu cái 1 không được thì thử 2 hoặc 3", function() end)
+Page:Button("Nếu không được nữa thì bạn ngu!!!", function() end)
+
+-- Auto Tab
+local Tab = Win:CraftTab("Auto")
+local Page = Tab:CraftPage("Auto", 1)
+
+Page:Button("Secret Sea 1", function()
+    local UserInputService = game:GetService("UserInputService")
+    local running = true
+    task.spawn(function()
+        while running and wait() do
+            fireclickdetector(game:GetService("Workspace").MAP["STARTER ISLAND [ Lv 1+ ]"]["Secret Random"].RANDOM)
+        end
+    end)
+    UserInputService.InputBegan:Connect(function(input, gameProcessed)
+        if input.KeyCode == Enum.KeyCode.X then
+            running = false
+            print("Đã dừng vòng lặp!")
+        end
+    end)
+end)
+
+Page:Button("Auto Yoru v3", function()
+    local UserInputService = game:GetService("UserInputService")
+    local running = true
+    task.spawn(function()
+        while running and wait() do
+            fireclickdetector(game:GetService("Workspace").MAP["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
+        end
+    end)
+    UserInputService.InputBegan:Connect(function(input, gameProcessed)
+        if input.KeyCode == Enum.KeyCode.X then
+            running = false
+            print("Đã dừng vòng lặp!")
+        end
+    end)
+end)
+
+Page:Button("Auto hộp event", function()
+    local UserInputService = game:GetService("UserInputService")
+    local running = true
+    task.spawn(function()
+        while running and wait() do
+            fireclickdetector(workspace.MAP["Event Island"].EventBox.ClickDetector)
+        end
+    end)
+    UserInputService.InputBegan:Connect(function(input, gameProcessed)
+        if input.KeyCode == Enum.KeyCode.X then
+            running = false
+            print("Đã dừng vòng lặp!")
+        end
+    end)
+end)
+
+Page:Button("Script bàn phím", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ginchao/All-Game/main/PlaceId"))()
+end)
+
+Page:Button("Cách tắt script auto nhấn X trên bàn phím", function() end)
+Page:Button("Nếu auto không hoạt động thì đến đảo để load", function() end)
+
+-- Teleport Tab
+local Tab = Win:CraftTab("Teleport")
+local Page = Tab:CraftPage("Sea 1", 1)
+
+Page:Button("Start Island", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(485.583771, 35.5632935, -511.945404)
+end)
+
+Page:Button("Snow Island", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-915.918945, 33.7605095, 282.443604)
+end)
+
+Page:Button("Sand Island", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-708.765259, 69.1108398, 1745.13916)
+end)
+
+Page:Button("Sky Island", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4594.52393, 4279.44092, 474.423523)
+end)
+
+Page:Button("End Island", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2223.75146, 36.3414612, 1965.90369)
+end)
+
+Page:Button("Minh Mama Island", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2569.90283, 51.1074524, -65.4458542)
+end)
+
+Page:Button("Dark Island", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3465.68188, 66.2542191, 3718.19531)
+end)
+
+Page:Button("PVP Arena", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(420.106812, 154.090622, -969.585876)
+end)
+
+Page:Button("Raid", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(578.97998, 33.2999954, -460.05011)
+end)
+
+Page:Button("Sea 2", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(577.100891, 33.2621346, -514.681824)
+end)
+
+-- Player Tab
+local Tab = Win:CraftTab("Player")
+local Page = Tab:CraftPage("TU", 1)
+
+Page:Textbox("Speed", "", function(v)
+    local speed = tonumber(v)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+    print("Speed set to " .. v)
+end)
+
+Page:Textbox("Jump Power (Nhảy cao)", "", function(v)
+    local jumpPower = tonumber(v)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = jumpPower
+    print("Jump Power set to " .. v)
+end)
+
+-- Các phần trước của script không thay đổi
+
+-- Auto Farm Tab
+local Tab = Win:CraftTab("Auto Farm")
+local Page = Tab:CraftPage("Auto Farm", 1)
+
+-- Đặt các vị trí spawn của quái vật
+local monsterSpawns = {
+    CFrame.new(100, 5, 200),
+    CFrame.new(200, 5, 300),
+    CFrame.new(300, 5, 400)
+}
+
+-- Hàm để tự động di chuyển đến vị trí và tấn công quái vật
+function autoFarm()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+    while wait(2) do
+        for _, spawn in ipairs(monsterSpawns) do
+            humanoidRootPart.CFrame = spawn
+            wait(1)
+            -- Giả sử rằng tấn công quái vật được thực hiện bằng cách kích hoạt một sự kiện RemoteEvent
+            local args = {8, 3}
+            game:GetService("Players").LocalPlayer.PlayerGui.RealTrippleKatana.Skill1b.Z.TextButtonm1.Hitbox:FireServer(unpack(args))
+            wait(1)
+        end
+    end
+end
+
+-- Tạo một nút bấm để bật/tắt chức năng auto farm
+Page:Button("Auto Farm", function()
+    autoFarm()
+end)
+
+-- Các phần sau của script không thay đổi
+
+Page:Toggle("Raid Kill Aura", false, function(state)
+    if state then
+        getgenv().G = true
+        getgenv().Creator = "https://discord.gg/B3HqPPzFYr - HalloweenGaster"
+        while getgenv().G and getgenv().Creator == "https://discord.gg/B3HqPPzFYr - HalloweenGaster" do
+            wait(0.9)
+            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+            sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+            for _, d in pairs(game.Workspace:GetDescendants()) do
+                if d.ClassName == "Humanoid" and d.Parent.Name ~= game.Players.LocalPlayer.Name then
+                    d.Health = 0
+                end
+            end
+        end
+        print("Raid Kill Aura enabled!")
+    else
+        getgenv().G = false
+        getgenv().Creator = "https://discord.gg/B3HqPPzFYr - HalloweenGaster"
+        while getgenv().G and getgenv().Creator == "https://discord.gg/B3HqPPzFYr - HalloweenGaster" do
+            wait(0.9)
+            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+            sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+            for _, d in pairs(game.Workspace:GetDescendants()) do
+                if d.ClassName == "Humanoid" and d.Parent.Name ~= game.Players.LocalPlayer.Name then
+                    d.Health = 0
+                end
+            end
+        end
+        print("Raid Kill Aura disabled!")
+    end
+end)
+
+-- Các phần trước của script không thay đổi
+
+-- Auto Farm Tab
+local Tab = Win:CraftTab("Auto Farm")
+local Page = Tab:CraftPage("Auto Farm", 1)
+
+-- Đặt các vị trí spawn của quái vật
+local monsterSpawns = {
+    CFrame.new(100, 5, 200),
+    CFrame.new(200, 5, 300),
+    CFrame.new(300, 5, 400)
+}
+Page:Textbox("Fake Beli", "", function(v)
+    local fakeBeli = tonumber(v)
+    game:GetService("Players").LocalPlayer.Data.Belis.Value = fakeBeli
+    print("Fake Beli set to " .. v)
+end)
+
+Page:Textbox("Fake Level", "", function(v)
+    local fakeLevel = tonumber(v)
+    game:GetService("Players").LocalPlayer.Data.Levels.Value = fakeLevel
+    print("Fake Level set to " .. v)
+end) 
+
+local Players = game:GetService("Players")
+local armors = {"Cursed-Armor", "Unique-Armor", "Darkness-Armor", "Thunder-Armor", "Thunder-Armor", "Diamond-Armor", "Golden-Armor", "Epic-Armor", "Iron-Armor", "Wooden-Armor"} -- Danh sách các loại giáp
+ 
+for _, player in pairs(Players:GetPlayers()) do
+    local backpack = player:FindFirstChild("Backpack")
+    if backpack then
+        for _, armorName in pairs(armors) do
+            local armor = backpack:FindFirstChild(armorName)
+            if armor and armor:FindFirstChild("K") and armor.K:FindFirstChild("Fire") then
+                armor.K.Fire:FireServer()
+            end
+        end
+    end
+end
+
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+
+local fastAttackStatus = false
+local killPlayerStatus = false
+local targetPlayer = nil
+
+-- Tắt bật tấn công nhanh
+UserInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.F7 then
+        fastAttackStatus = not fastAttackStatus
+        print("Tấn công nhanh đã được " .. (fastAttackStatus and "bật" or "tắt"))
+    elseif input.KeyCode == Enum.KeyCode.F8 then
+        targetPlayer = nil
+        print("Đã hủy mục tiêu")
+    elseif input.KeyCode == Enum.KeyCode.F9 then
+        killPlayerStatus = not killPlayerStatus
+        print("Kill player đã được " .. (killPlayerStatus and "bật" or "tắt"))
+    end
+end)
+
+-- Chọn mục tiêu
+UserInputService.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton2 then
+        local mouse = player:GetMouse()
+        local target = mouse.Target
+
+        if target then
+            local targetPlayer = Players:GetPlayerFromCharacter(target.Parent)
+
+            if targetPlayer then
+                targetPlayer = targetPlayer
+                print("Đã chọn mục tiêu: " .. targetPlayer.Name)
+            end
+        end
+    end
+end)
